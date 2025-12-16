@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shukra Living</title>
+
+  <!-- remove browser default spacing -->
+  <style>
+    html, body { margin: 0; padding: 0; }
+  </style>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body { font-family: "Poppins", sans-serif; }
+  </style>
+</head>
+
+<body class="bg-[#FBF5DF]">
+
+  <!-- ===================== NAVBAR (SEPARATE) ===================== -->
+  <header class="pt-8">
+    <div class="w-[1100px] mx-auto relative">
+
+      <!-- NAVBAR PILL -->
+      <div class="relative bg-[#E2D6B4] rounded-full flex items-center justify-between pr-[70px] py-3">
+
+        <!-- Logo circle (overlapping on left) -->
+        <div class="absolute -left-8 top-1/2 -translate-y-1/2">
+          <div class="w-[78px] h-[78px] rounded-full bg-[#3A2A1A] flex items-center justify-center overflow-hidden shadow-md">
+            <img src="images/logo.png" class="w-full h-full object-cover" alt="Logo">
+          </div>
+        </div>
+
+        <!-- LEFT LINKS -->
+        <nav class="flex items-center gap-8 pl-20 text-[#6B4A2A] font-semibold tracking-[0.18em] text-md uppercase">
+          <a href="#">Home</a>
+
+          <!-- Categories dropdown -->
+          <div class="relative" id="catWrap">
+            <button id="catBtn" class="flex items-center gap-2 text-md">
+              CATEGORIES
+            </button>
+
+            <!-- Mega Menu -->
+            <div id="catMenu"
+              class="hidden absolute left-0 top-[52px] w-[980px] max-w-[calc(100vw-32px)]
+                     rounded-2xl bg-black/55 backdrop-blur-md border border-white/10
+                     shadow-2xl p-8 text-white z-50">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Living Room</h3>
+                  <ul class="space-y-2 text-white/85 text-sm">
+                    <li><a class="hover:text-white" href="#">Sofa chairs</a></li>
+                    <li><a class="hover:text-white" href="#">Sofa Set</a></li>
+                    <li><a class="hover:text-white" href="#">TV & media cabinet</a></li>
+                    <li><a class="hover:text-white" href="#">Center Table</a></li>
+                    <li><a class="hover:text-white" href="#">Cabinet</a></li>
+                    <li><a class="hover:text-white" href="#">Recliners</a></li>
+                    <li><a class="hover:text-white" href="#">Accessories</a></li>
+                    <li><a class="hover:text-white" href="#">Artifacts</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Bed Room</h3>
+                  <ul class="space-y-2 text-white/85 text-sm">
+                    <li><a class="hover:text-white" href="#">Dressing Table</a></li>
+                    <li><a class="hover:text-white" href="#">Bed</a></li>
+                    <li><a class="hover:text-white" href="#">Bedside Table</a></li>
+                    <li><a class="hover:text-white" href="#">Chest of Drawers</a></li>
+                    <li><a class="hover:text-white" href="#">Wardrobes</a></li>
+                    <li><a class="hover:text-white" href="#">Walk in Closet</a></li>
+                    <li><a class="hover:text-white" href="#">Accessories</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Dining Room</h3>
+                  <ul class="space-y-2 text-white/85 text-sm">
+                    <li><a class="hover:text-white" href="#">Bar Furniture</a></li>
+                    <li><a class="hover:text-white" href="#">Crockery Unit</a></li>
+                    <li><a class="hover:text-white" href="#">Dining Chairs</a></li>
+                    <li><a class="hover:text-white" href="#">Dining Table Set</a></li>
+                    <li><a class="hover:text-white" href="#">Accessories</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Study Room</h3>
+                  <ul class="space-y-2 text-white/85 text-sm">
+                    <li><a class="hover:text-white" href="#">Book Shelf</a></li>
+                    <li><a class="hover:text-white" href="#">Office Furniture</a></li>
+                    <li><a class="hover:text-white" href="#">Study Table</a></li>
+                    <li><a class="hover:text-white" href="#">Bean bags and chai</a></li>
+                    <li><a class="hover:text-white" href="#">Accessories</a></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-3">Luxury Furniture</h3>
+                  <ul class="space-y-2 text-white/85 text-sm">
+                    <li><a class="hover:text-white" href="#">Recliners</a></li>
+                    <li><a class="hover:text-white" href="#">Sofa Set</a></li>
+                    <li><a class="hover:text-white" href="#">Console Table</a></li>
+                    <li><a class="hover:text-white" href="#">Side Table</a></li>
+                    <li><a class="hover:text-white" href="#">Bed</a></li>
+                    <li><a class="hover:text-white" href="#">Dining Table set</a></li>
+                    <li><a class="hover:text-white" href="#">Chairs</a></li>
+                    <li><a class="hover:text-white" href="#">Accessories</a></li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- little arrow -->
+              <div class="absolute -top-7 left-16 w-0 h-0
+                          border-l-[10px] border-l-transparent
+                          border-r-[10px] border-r-transparent
+                          border-b-[12px] border-b-black/55"></div>
+            </div>
+          </div>
+
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- RIGHT SEARCH + ICONS -->
+        <div class="flex items-center gap-4 w-full max-w-xl justify-end">
+          <div class="flex items-center gap-3 bg-[#B37952] text-white px-6 py-2 rounded-full w-full max-w-[520px]">
+            <img src="images/search .png" class="w-5 h-5" alt="">
+            <input type="text" placeholder="Search" class="bg-transparent outline-none placeholder-white/90 text-sm w-full"/>
+          </div>
+
+          <div class="text-[#6B4A2A] flex gap-4 items-center">
+            <img src="images/cart.png" class="w-6 h-6" alt="">
+            <img src="images/bookmark.png" class="w-6 h-6" alt="">
+            <img src="images/account.png" class="w-6 h-6" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO (SEPARATE) ===================== -->
+  <main class="pt-[-200px]">
+    <section class="w-[1100px] mx-auto">
+      <section
+        id="heroSlider"
+        class="relative mt-4 rounded-[32px] overflow-hidden min-h-[470px] bg-cover bg-center transition-all duration-1000"
+        style="background-image: url('./images/image1.jpeg');"
+      >
+        <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/80"></div>
+
+        <div class="relative z-10 h-full px-10 pt-16 pb-10 flex flex-col justify-between text-white">
+
+          <!-- Rotating headline -->
+          <div class="w-full flex justify-center">
+            <div class="overflow-hidden h-[52px] md:h-[64px]">
+              <div id="headlineSlider" class="transition-transform duration-700 ease-in-out will-change-transform">
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  Crafting Spaces You'll Love to Live In.
+                </div>
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  Where Quality Meets Contemporary Design.
+                </div>
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  The Foundation of a Beautiful Home.
+                </div>
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  Furnish Your Vision With Style.
+                </div>
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  Comfort Meets Modern Elegance.
+                </div>
+                <div class="h-[52px] md:h-[64px] flex items-center justify-center text-center text-4xl md:text-5xl font-semibold whitespace-nowrap">
+                  Crafting Spaces You'll Love to Live In.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom layout -->
+          <div class="mt-10 flex justify-between items-end gap-16">
+
+            <!-- LEFT -->
+            <div class="max-w-[520px]">
+              <h3 class="text-4xl font-semibold leading-snug">
+                Elevate Your Everyday: Discover<br/>
+                Furniture That Defines Your Style
+              </h3>
+              <button class="inline-flex items-center justify-center px-7 py-2.5 rounded-full bg-[#F9F0DF] text-[#6B4A2A] font-semibold text-[16px] shadow-sm mt-6">
+                Shop
+              </button>
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="w-full max-w-sm bg-black/55 rounded-[28px] px-7 py-6 backdrop-blur-sm">
+              <h2 class="text-2xl font-semibold mb-1">Get in touch</h2>
+              <p class="text-[11px] text-gray-200 mb-4">
+                One Click, Every Room: Your Complete Furniture Solution.
+              </p>
+
+              <input type="text" placeholder="*Full name" class="w-full bg-white rounded-md px-3 py-2 mb-3 text-sm text-black"/>
+              <input type="tel" placeholder="*Phone number" class="w-full bg-white rounded-md px-3 py-2 mb-3 text-sm text-black"/>
+              <input type="email" placeholder="*Email id" class="w-full bg-white rounded-md px-3 py-2 mb-4 text-sm text-black"/>
+
+              <label class="flex items-start gap-2 text-[11px] text-gray-200 mb-3">
+                <input type="checkbox" class="mt-0.5"/>
+                <span>Yes, I want to stay in the loop on new arrivals, sales, and design inspiration.</span>
+              </label>
+
+              <label class="flex items-start gap-2 text-[11px] text-gray-200 mb-5">
+                <input type="checkbox" class="mt-0.5"/>
+                <span>I agree to the <a href="#" class="text-[#F36A4C]">t&amp;c policy</a></span>
+              </label>
+
+              <button class="w-full py-2 rounded-full bg-[#8A5734] text-white font-semibold text-sm">
+                Submit
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===================== WHY CHOOSE US ===================== -->
+    <section class="py-20 bg-[#FBF5DF]">
+      <div class="w-[1100px] mx-auto">
+
+        <div class="flex items-center gap-6 mb-14">
+          <div class="h-[2px] bg-[#B66C2D] flex-1"></div>
+          <h2 class="text-4xl font-semibold text-[#5A2F16] whitespace-nowrap">
+            Why Choose Us
+          </h2>
+          <div class="h-[2px] bg-[#B66C2D] flex-1"></div>
+        </div>
+
+        <div class="grid grid-cols-5 gap-8">
+          <div class="border-2 border-[#5A2F16] p-6 text-center">
+            <img src="images/premium.png" class="w-12 mx-auto mb-4">
+            <h3 class="text-sm font-semibold text-[#5A2F16]">Premium<br/>Craftsmanship</h3>
+            <p class="text-[11px] text-[#6B4A2A] mt-3">
+              Expertly crafted furniture with attention to detail.
+            </p>
+          </div>
+
+          <div class="border-2 border-[#5A2F16] p-6 text-center">
+            <img src="images/custom.png" class="w-12 mx-auto mb-4">
+            <h3 class="text-sm font-semibold text-[#5A2F16]">Custom-Made Designs</h3>
+            <p class="text-[11px] text-[#6B4A2A] mt-3">
+              Tailored furniture for your space and lifestyle.
+            </p>
+          </div>
+
+          <div class="border-2 border-[#5A2F16] p-6 text-center">
+            <img src="images/affordaable.png" class="w-12 mx-auto mb-4">
+            <h3 class="text-sm font-semibold text-[#5A2F16]">Affordable Pricing</h3>
+            <p class="text-[11px] text-[#6B4A2A] mt-3">
+              Transparent pricing with no hidden costs.
+            </p>
+          </div>
+
+          <div class="border-2 border-[#5A2F16] p-6 text-center">
+            <img src="images/fast.png" class="w-12 mx-auto mb-4">
+            <h3 class="text-sm font-semibold text-[#5A2F16]">Fast &amp; Safe Delivery</h3>
+            <p class="text-[11px] text-[#6B4A2A] mt-3">
+              Secure delivery with professional installation.
+            </p>
+          </div>
+
+          <div class="border-2 border-[#5A2F16] p-6 text-center">
+            <img src="images/durable.png" class="w-12 mx-auto mb-4">
+            <h3 class="text-sm font-semibold text-[#5A2F16]">Durable Materials</h3>
+            <p class="text-[11px] text-[#6B4A2A] mt-3">
+              High-quality wood, fabric & hardware.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+   <!-- ===================== DESIGN MY HOME (FULL WIDTH) ===================== -->
+   <section class="bg-[#FBF5DF] py-32 overflow-visible">
+    <div class="relative w-full">
+  
+      <!-- BLURRED BROWN BACKGROUND BAND -->
+      <div
+        class="absolute left-0 right-0 top-1/2 -translate-y-1/2
+               h-[300px] bg-[#7A4A23] blur-[22px] scale-110 z-0"
+        aria-hidden="true"
+      ></div>
+  
+      <!-- CONTENT WRAPPER -->
+      <div class="relative max-w-[1200px] mx-auto flex items-center gap-20 z-10">
+  
+        <!-- IMAGE (BIGGER THAN BG) -->
+        <div class="relative mt-[-10px]">
+          <img
+            src="images/design_my_home.png"
+            alt="Design My Home"
+            class="w-[460px] h-[420px] object-cover rounded-[26px] shadow-2xl"
+          />
+        </div>
+  
+        <!-- TEXT CONTENT -->
+        <div class="text-[#FBF5DF] max-w-[520px]">
+          <h2 class="text-3xl font-semibold mb-4">
+            Design a Home That Truly Feels Like You
+          </h2>
+  
+          <p class="text-sm leading-relaxed text-[#F6EBDD] mb-6">
+            From cozy corners to spacious rooms, we tailor furniture to your taste
+            and comfort. Every piece is handmade, thoughtfully designed, and
+            crafted to fit your lifestyle. Bring harmony, warmth, and style into
+            every part of your home.
+          </p>
+  
+          <button
+            class="px-8 py-2.5 rounded-full bg-[#FBF5DF]
+                   text-[#6B3F1E] font-semibold text-sm"
+          >
+            Design My Home
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <div class="min-h-screen p-8 flex justify-center items-center">
+  <!-- SHOP BY ROOM (Clean gaps + full hover on all images) -->
+<div class="min-h-screen  px-8 py-14 flex justify-center">
+<!-- SECTION -->
+<section class=" py-14">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <h2 class="text-[#5b3a1e] text-4xl font-extrabold tracking-tight">
+      Shop Everything You Need to Complete Your Home's Aesthetic.
+    </h2>
+
+    <!-- Tabs -->
+    <div class="mt-10 flex flex-wrap gap-4 justify-center">
+      <button class="tab-btn active" data-tab="living">Living Room</button>
+      <button class="tab-btn" data-tab="bed">Bed Room</button>
+      <button class="tab-btn" data-tab="dining">Dining Room</button>
+      <button class="tab-btn" data-tab="study">Study Room</button>
+      <button class="tab-btn" data-tab="luxury">Luxury Furniture</button>
+    </div>
+
+    <!-- TAB CONTENTS -->
+    <div class="mt-10">
+
+      <!-- Living -->
+      <div class="tab-panel" id="living">
+        <!-- put your mosaic grid here -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- LEFT -->
+          <div class="flex flex-col gap-6">
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/sofachair.png" class="w-full h-[625px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Sofa Chairs</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/accessories_living.png" class="w-full h-[250px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Accessories</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/artifacts.png" class="w-full h-[335px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Artifacts</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/sofa set.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Sofa Sets</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/tv_cabinet.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">TV Cabinets</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/centre_table.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Centre Tables</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/side_table.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Side Tables</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/recliners.png" class="w-full h-[609px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Recliners</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bed -->
+      <div class="tab-panel hidden" id="bed">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- LEFT -->
+          <div class="flex flex-col gap-6">
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/dressing_table.png" class="w-full h-[625px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Dressing Table</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/wardrobe.png" class="w-full h-[609px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Wardrobes</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/bed.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Bed</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/bedside_table.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Bedside Table</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+
+                <img
+                  src="images/chest_drawers.png"
+                  class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+                <!-- Centered Text -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3
+                    class="text-[#5b3a1e] text-3xl font-semibold text-center leading-tight max-w-[80%]">
+                    Chest of<br>Drawers
+                  </h3>
+                </div>
+              
+              </div>
+              
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/accessories.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Accessories</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/walk_in_closet.png" class="w-full h-[609px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Walk in Closet</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dining -->
+      <div class="tab-panel hidden" id="dining">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- LEFT -->
+          <div class="flex flex-col gap-6">
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/Bar_furniture.png" class="w-full h-[625px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Bar Furniture</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/crockery_unit.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Crockery Unit</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Crockeryset.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Crockery Set </h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/dining_chairs.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Dining Chairs</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/dining_tableset.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Dining Table Set</h3>
+                </div>
+              </div>
+            </div>
+
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Study -->
+      <div class="tab-panel hidden" id="study">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- LEFT -->
+          <div class="flex flex-col gap-6">
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/Bookshelf.png" class="w-full h-[625px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Book Shelf</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Office_furniture.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Office Furniture</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Study_table.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Study Table</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Beanbags.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Bean Bags <br> and Chairs</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Study_accessories.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Accessories</h3>
+                </div>
+              </div>
+            </div>
+
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxury -->
+      <div class="tab-panel" id="luxury">
+        <!-- put your mosaic grid here -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- LEFT -->
+          <div class="flex flex-col gap-6">
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/Recliners_lux.png" class="w-full h-[625px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Recliners</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images" class="w-full h-[250px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Sofa Sets</h3>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/console_tables.png" class="w-full h-[335px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Artifacts</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/sidetables.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Sofa Sets</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/Bedlux.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">TV Cabinets</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/dininglux.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Centre Tables</h3>
+                </div>
+              </div>
+
+              <div class="relative group overflow-hidden rounded-[28px]">
+                <img src="images/chairs.png" class="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 class="text-[#5b3a1e] text-3xl font-semibold">Side Tables</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative group overflow-hidden rounded-[28px]">
+              <img src="images/ccessories_lux.png" class="w-full h-[609px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-[#d6c7b5]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <h3 class="text-[#5b3a1e] text-3xl font-semibold">Recliners</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind button styles (no extra CSS file needed) -->
+<style>
+  .tab-btn{
+    padding: 18px 34px;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 20px;
+    background: #d7d8c3;
+    color: #5b3a1e;
+    transition: 0.25s;
+  }
+  .tab-btn.active{
+    background: #5b3a1e;
+    color: #fbf8ee;
+  }
+</style>
+
+<script>
+  const btns = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // active button
+      btns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // show panel
+      const id = btn.dataset.tab;
+      panels.forEach(p => p.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    });
+  });
+</script>
+
+</div>
+
+  </div>
+  
+  </div>
+  
+
+
+  
+  
+
+
+  </main>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hero = document.getElementById("heroSlider");
+      const headline = document.getElementById("headlineSlider");
+      const items = headline.children;
+      const total = items.length; // includes clone
+      let i = 0;
+
+      const slides = [
+        { bg: "./images/image1.jpeg" },
+        { bg: "./images/image2.jpeg" },
+        { bg: "./images/image3.jpeg" },
+        { bg: "./images/image4.jpeg" },
+        { bg: "./images/image1.jpeg" }
+      ];
+
+      hero.style.backgroundImage = `url('${slides[0].bg}')`;
+
+      const stepH = () => items[0].getBoundingClientRect().height;
+
+      function tick() {
+        i++;
+        headline.style.transition = "transform 0.7s ease-in-out";
+        headline.style.transform = `translateY(-${i * stepH()}px)`;
+
+        const idx = Math.min(i, slides.length - 1);
+        hero.style.backgroundImage = `url('${slides[idx].bg}')`;
+
+        if (i === total - 1) {
+          setTimeout(() => {
+            headline.style.transition = "none";
+            i = 0;
+            headline.style.transform = `translateY(0px)`;
+            hero.style.backgroundImage = `url('${slides[0].bg}')`;
+          }, 700);
+        }
+      }
+
+      setInterval(tick, 3000);
+
+      window.addEventListener("resize", () => {
+        headline.style.transition = "none";
+        headline.style.transform = `translateY(-${i * stepH()}px)`;
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrap = document.getElementById("catWrap");
+      const btn = document.getElementById("catBtn");
+      const menu = document.getElementById("catMenu");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!wrap.contains(e.target)) menu.classList.add("hidden");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") menu.classList.add("hidden");
+      });
+    });
+  </script>
+<style>
+  /* Soft fade on top/bottom like your screenshot */
+  .brown-band {
+    position: relative;
+    isolation: isolate;
+  }
+  .brown-band::before,
+  .brown-band::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 90px;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .brown-band::before {
+    top: -90px;
+    background: linear-gradient(to bottom, rgba(122,74,35,0), rgba(122,74,35,1));
+    filter: blur(10px);
+  }
+  .brown-band::after {
+    bottom: -90px;
+    background: linear-gradient(to top, rgba(122,74,35,0), rgba(122,74,35,1));
+    filter: blur(10px);
+  }
+</style>
+
+</body>
+</html>
